@@ -1,0 +1,129 @@
+/* 基本スタイル */
+:root {
+  --primary-color: #4a90e2;
+  --board-color: #e9bc62;
+  --board-line-color: #000;
+  --black-stone: #000;
+  --white-stone: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ゲーム関連のスタイル */
+.game-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.game-board {
+  background-color: var(--board-color);
+  border: 1px solid #ccc;
+  margin: 1rem 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.game-status {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  height: 1.5em;
+}
+
+.game-controls {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.reset-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.reset-button:hover {
+  background-color: #357ae8;
+}
+
+.reset-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.5);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .game-container {
+    padding: 1rem;
+  }
+  
+  .game-board {
+    width: 90vw;
+    height: auto;
+    max-width: 570px;
+    max-height: 570px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-status {
+    font-size: 1rem;
+  }
+  
+  .reset-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
